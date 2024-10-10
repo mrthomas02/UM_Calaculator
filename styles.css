@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.calculator {
+    width: 320px;
+    padding: 20px;
+    background: #222;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.display input {
+    width: 100%;
+    height: 60px;
+    background: #444;
+    border: none;
+    text-align: right;
+    padding: 10px;
+    font-size: 24px;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in, background-color 0.3s;
+}
+
+/* Styles for specific buttons */
+button.clear,
+button.backspace,
+button.percent {
+    background-color: #bbb; /* Light grey for the top row buttons */
+}
+
+button.dark {
+    background-color: #444; /* Dark grey for the rest of the buttons */
+}
+
+button.operator.green {
+    background-color: #4caf50; /* Green for operator buttons */
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #555;
+}
+
+button:active {
+    transform: scale(1.05);
+}
+
+button.clear:hover,
+button.backspace:hover,
+button.percent:hover {
+    background-color: #ccc; /* Darker grey on hover for the top row buttons */
+}
+
+button.dark:hover {
+    background-color: #555; /* Darker grey on hover for dark buttons */
+}
+
+button.operator.green:hover {
+    background-color: #66bb6a; /* Lighter green on hover */
+}
