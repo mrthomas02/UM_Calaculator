@@ -8,14 +8,12 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.textContent;
 
-        // Clear everything
         if (button.classList.contains('clear')) {
             currentInput = '';
             operator = null;
             previousInput = '';
             display.value = '';
         }
-        // Equals button
         else if (value === '=') {
             if (operator && previousInput !== '' && currentInput !== '') {
                 currentInput = calculate(previousInput, currentInput, operator);
@@ -24,13 +22,11 @@ buttons.forEach(button => {
                 previousInput = '';
             }
         }
-        // Operators (+, -, *, /)
         else if (['+', '-', '*', '/'].includes(value)) {
             operator = value;
             previousInput = currentInput;
             currentInput = '';
         }
-        // Handle other button inputs (numbers, decimal)
         else {
             currentInput += value;
             display.value = currentInput;
@@ -38,7 +34,6 @@ buttons.forEach(button => {
     });
 });
 
-// Square root functionality
 document.querySelector('.sqrt').addEventListener('click', () => {
     if (currentInput !== '') {
         currentInput = Math.sqrt(parseFloat(currentInput)).toString();
@@ -46,7 +41,6 @@ document.querySelector('.sqrt').addEventListener('click', () => {
     }
 });
 
-// Percentage functionality
 document.querySelector('.percent').addEventListener('click', () => {
     if (currentInput !== '') {
         currentInput = (parseFloat(currentInput) / 100).toString();
@@ -54,13 +48,11 @@ document.querySelector('.percent').addEventListener('click', () => {
     }
 });
 
-// Backspace functionality
 document.querySelector('.backspace').addEventListener('click', () => {
     currentInput = currentInput.slice(0, -1);
     display.value = currentInput;
 });
 
-// Calculate result
 function calculate(num1, num2, operator) {
     const a = parseFloat(num1);
     const b = parseFloat(num2);
