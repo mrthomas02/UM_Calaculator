@@ -32,7 +32,7 @@ To run the calculator locally, follow these steps:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/basic-calculator.git
+   git clone https://github.com/mrthomas02/basic-calculator.git
 
 2. Navigate to the project directory:
    ```bash
